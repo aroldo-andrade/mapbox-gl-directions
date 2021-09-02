@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, bindActionCreators } from 'redux';
 import thunk from 'redux-thunk';
-import { decode } from '@mapbox/polyline';
+import polyline from '@mapbox/polyline';
 import utils from './utils';
 import rootReducer from './reducers';
 
@@ -187,7 +187,7 @@ export default class MapboxDirections {
 
           const features = [];
 
-          const decoded = decode(feature.geometry, 5).map(function(c) {
+          const decoded = polyline.decode(feature.geometry, 5).map(function(c) {
             return c.reverse();
           });
 
