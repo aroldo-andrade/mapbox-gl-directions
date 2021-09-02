@@ -558,4 +558,22 @@ export default class MapboxDirections {
     this.actions.eventSubscribe(type, fn);
     return this;
   }
+
+   /**
+   * Unsubscribe to events
+   * @param {String} type name of event. Available events and the data passed into their respective event objects are:
+   *
+   * - __clear__ `{ type: } Type is one of 'origin' or 'destination'`
+   * - __loading__ `{ type: } Type is one of 'origin' or 'destination'`
+   * - __profile__ `{ profile } Profile is one of 'driving', 'walking', or 'cycling'`
+   * - __origin__ `{ feature } Fired when origin is set`
+   * - __destination__ `{ feature } Fired when destination is set`
+   * - __route__ `{ route } Fired when a route is updated`
+   * - __error__ `{ error } Error as string`
+   * @returns {MapboxDirections} this;
+   */
+    off(type) {
+      this.actions.eventUnsubscribe(type);
+      return this;
+    }
 }

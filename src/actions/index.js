@@ -321,6 +321,18 @@ export function eventSubscribe(type, fn) {
   };
 }
 
+export function eventUnsubscribe(type) {
+  return (dispatch, getState) => {
+    const { events } = getState();
+    events[type] = events[type] || [];
+    events[type] = []
+    return {
+      type: types.EVENTS,
+      events
+    };
+  };
+}
+
 export function eventEmit(type, data) {
   return (dispatch, getState) => {
     const { events } = getState();
