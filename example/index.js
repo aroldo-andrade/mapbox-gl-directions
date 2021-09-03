@@ -37,7 +37,9 @@ removeListenerButton.style = 'z-index:10;position:absolute;top:70px;right:10px;'
 removeListenerButton.textContent = 'Remove Listener';
 
 // directions
-var MapboxDirections = require('../src/index');
+// var MapboxDirections = require('../src/index');
+import MapboxDirections from '../src/index'
+
 var directions = new MapboxDirections({
   accessToken: window.localStorage.getItem('MapboxAccessToken'),
   unit: 'metric',
