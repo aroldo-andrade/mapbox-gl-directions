@@ -1,3 +1,5 @@
-import MapboxDirections from './directions';
+import exprt from './directions';
 
-module.exports = MapboxDirections;
+const MapboxDirections = exprt
+
+export default MapboxDirections
